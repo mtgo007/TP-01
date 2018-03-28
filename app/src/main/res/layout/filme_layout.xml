@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/Filme_Faixa"
+        android:layout_marginRight="5dp"/>
+
+    <TextView
+        android:id="@+id/Filme_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/Filme_Faixa"
+        android:text="Titulo"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/Filme_genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Filme_titulo"
+        android:layout_toEndOf="@+id/Filme_Faixa"
+        android:text="Genero"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/Filme_Diretor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Filme_titulo"
+        android:layout_marginStart="47dp"
+        android:layout_toEndOf="@+id/Filme_genero"
+        android:text="Diretor"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/Filme_Ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Filme_genero"
+        android:layout_toEndOf="@+id/Filme_Faixa"
+        android:text="Ano"
+        android:textSize="15dp" />
+
+</RelativeLayout>

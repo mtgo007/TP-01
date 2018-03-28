@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mtgo007.movies.MainActivity">
+
+    <TableRow android:gravity="center"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuario" />
+
+        <EditText
+            android:id="@+id/usuario"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Usuario" />
+
+    </TableRow>
+    <TableRow
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Senha" />
+
+        <EditText
+            android:id="@+id/senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textWebPassword"
+            android:hint="Senha" />
+    </TableRow>
+
+    <TableRow android:gravity="center"
+        android:layout_marginTop="5dp">
+        <Button
+            android:id="@+id/logar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logar" />
+    </TableRow>
+    <TableRow android:gravity="center"
+        android:layout_marginTop="5dp">
+        <Button
+            android:id="@+id/cadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar" />
+    </TableRow>
+
+
+
+
+
+</TableLayout>

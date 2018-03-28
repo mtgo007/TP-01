@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "625746092138",
+    "firebase_url": "https://moviesapp-c091d.firebaseio.com",
+    "project_id": "moviesapp-c091d",
+    "storage_bucket": "moviesapp-c091d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625746092138:android:de8c18f116b2d936",
+        "android_client_info": {
+          "package_name": "com.mtgo007.movies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625746092138-u9e4t6mpnlm5dte39345d77cas0qb4nm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mtgo007.movies",
+            "certificate_hash": "eb4570a6c8dbcfbac26346750f1f1be684531fc2"
+          }
+        },
+        {
+          "client_id": "625746092138-ksecv7mnmacr8qcj2tcnvuaqkeqqnt8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5yOqFuKVlwxLxZ7Er6pFLry9AShT-a10"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625746092138-ksecv7mnmacr8qcj2tcnvuaqkeqqnt8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
