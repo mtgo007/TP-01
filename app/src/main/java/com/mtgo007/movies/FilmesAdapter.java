@@ -1,13 +1,21 @@
 package com.mtgo007.movies;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -83,11 +91,11 @@ public class FilmesAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         Filme filme = this.filmes.get(position);
-        View newView = LayoutInflater.from(this.context).inflate(R.layout.filme_layout, parent, false);
+        final View newView = LayoutInflater.from(this.context).inflate(R.layout.filme_layout, parent, false);
 
-        TextView titulo = newView.findViewById(R.id.Filme_titulo);
+        final TextView titulo = newView.findViewById(R.id.Filme_titulo);
         TextView Genero = newView.findViewById(R.id.Filme_genero);
         TextView diretor = newView.findViewById(R.id.Filme_Diretor);
         TextView ano = newView.findViewById(R.id.Filme_Ano);
@@ -105,6 +113,64 @@ public class FilmesAdapter extends BaseAdapter {
         if(filme.getFaixaEtaria().equals("14")){faixa.setBackgroundResource(R.drawable.quatorze);}
         if(filme.getFaixaEtaria().equals("16")){faixa.setBackgroundResource(R.drawable.dezeseis);}
         if(filme.getFaixaEtaria().equals("18")){faixa.setBackgroundResource(R.drawable.dezoito);}
+
+        newView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                PopupMenu popup = new PopupMenu(FilmesAdapter.this.context, newView);
+                MenuInflater inflater = popup.getMenuInflater();
+                inflater.inflate(R.menu.popup_menu, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        String selecionado = String.valueOf(item.getTitle());
+                        if(selecionado.equals("Deletar")){
+                            Log.i("Filme Adapter","Deletar");
+                            //Comfirmação
+
+                            AlertDialog.Builder alertBuilder = new AlertDialog.Builder(FilmesAdapter.this.context);
+
+                            // Define Parâmetros para o Dialog
+                            alertBuilder.setTitle("Deseja Deletar o Filme "+titulo.getText().toString());
+                            alertBuilder.setMessage("O Filme Será Deletado de Sua Lista");
+
+                            // Define o que acontece quando o usuário seleciona a opção positiva
+                            alertBuilder.setPositiveButton("Deletar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    mDatabase = FirebaseDatabase.getInstance().getReference();
+                                    mDatabase.child("users").child(FilmesAdapter.this.user).child("Filmes").child(titulo.getText().toString()).removeValue();
+                                    FilmesAdapter.this.filmes.remove(position);
+                                    Toast.makeText(FilmesAdapter.this.context, "Filme Deletado", Toast.LENGTH_LONG).show();
+                                    FilmesAdapter.this.notifyDataSetChanged();
+                                }
+                            });
+
+                            // Define o que acontece quando o usuário seleciona a opção negativa
+                            alertBuilder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Toast.makeText(FilmesAdapter.this.context, "Filme Não Deletado", Toast.LENGTH_LONG).show();
+                                }
+                            });
+
+                            AlertDialog dialog = alertBuilder.create();
+                            dialog.show();
+                        } else if(selecionado.equals("Compartilhar")){
+                            Intent sendIntent = new Intent();
+                            sendIntent.setAction(Intent.ACTION_SEND);
+                            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                            sendIntent.setType("text/plain");
+                            FilmesAdapter.this.context.startActivity(Intent.createChooser(sendIntent, "Send To"));
+                        }
+                        //Toast.makeText(FilmesAdapter.this.context,"You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                });
+                popup.show();
+
+                return false;
+            }
+        });
 
         return newView;
     }
