@@ -17,8 +17,10 @@ public class ListaFilmes extends AppCompatActivity {
 
         Bundle args = this.getIntent().getExtras();
         final String name = args.getString("User");
+        FilmesAdapter fadaper = new FilmesAdapter(this, name);
 
         ListView filmes = findViewById(R.id.filmesView);
-        filmes.setAdapter(new FilmesAdapter(this, name));
+        filmes.setAdapter(fadaper);
+        fadaper.notifyDataSetChanged();
     }
 }
