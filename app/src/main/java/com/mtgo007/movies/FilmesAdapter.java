@@ -38,41 +38,10 @@ public class FilmesAdapter extends BaseAdapter {
     private String user;
     private DatabaseReference mDatabase;
 
-    public FilmesAdapter(Context c, String user){
+    public FilmesAdapter(Context c, ArrayList<Filme> movies, String user){
         this.context = c;
-        this.filmes = new ArrayList<>();
-        this.user = user;
-
-        //data from database
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-
-        mDatabase.child("users").child(user).child("Filmes").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                try {
-                    if (dataSnapshot.getValue() != null) {
-                        try {
-                            for (DataSnapshot child: dataSnapshot.getChildren()) {
-                                filmes.add(child.getValue(Filme.class));
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        Log.e("Filmes Adapter", "Sem FIlmes");
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e("Lista Filmes Adapter", "Cancelado");
-            }
-        });
-
-
+        this.filmes = movies;
+        this.user =user;
     }
 
     @Override
@@ -92,14 +61,14 @@ public class FilmesAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        Filme filme = this.filmes.get(position);
+        final Filme filme = this.filmes.get(position);
         final View newView = LayoutInflater.from(this.context).inflate(R.layout.filme_layout, parent, false);
 
         final TextView titulo = newView.findViewById(R.id.Filme_titulo);
-        TextView Genero = newView.findViewById(R.id.Filme_genero);
-        TextView diretor = newView.findViewById(R.id.Filme_Diretor);
-        TextView ano = newView.findViewById(R.id.Filme_Ano);
-        ImageView faixa = newView.findViewById(R.id.Filme_Faixa);
+        final TextView Genero = newView.findViewById(R.id.Filme_genero);
+        final TextView diretor = newView.findViewById(R.id.Filme_Diretor);
+        final TextView ano = newView.findViewById(R.id.Filme_Ano);
+        final ImageView faixa = newView.findViewById(R.id.Filme_Faixa);
 
 
         titulo.setText(filme.getNome());
@@ -158,7 +127,7 @@ public class FilmesAdapter extends BaseAdapter {
                         } else if(selecionado.equals("Compartilhar")){
                             Intent sendIntent = new Intent();
                             sendIntent.setAction(Intent.ACTION_SEND);
-                            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                            sendIntent.putExtra(Intent.EXTRA_TEXT, "Titulo: "+titulo.getText().toString()+"\nDiretor: "+diretor.getText().toString()+"\nGenêro: "+Genero.getText().toString()+"\nFaixa Étaria: "+filme.getFaixaEtaria().toString()+"\nAno: "+ano.getText().toString());
                             sendIntent.setType("text/plain");
                             FilmesAdapter.this.context.startActivity(Intent.createChooser(sendIntent, "Send To"));
                         }
