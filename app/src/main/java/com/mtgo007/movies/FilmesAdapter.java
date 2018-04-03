@@ -68,13 +68,16 @@ public class FilmesAdapter extends BaseAdapter {
         final TextView Genero = newView.findViewById(R.id.Filme_genero);
         final TextView diretor = newView.findViewById(R.id.Filme_Diretor);
         final TextView ano = newView.findViewById(R.id.Filme_Ano);
+
         final ImageView faixa = newView.findViewById(R.id.Filme_Faixa);
+
 
 
         titulo.setText(filme.getNome());
         Genero.setText(filme.getGenero());
         diretor.setText(filme.getDiretor());
         ano.setText(String.valueOf(filme.getAno()));
+
 
         if(filme.getFaixaEtaria().equals("L")){faixa.setBackgroundResource(R.drawable.livre);}
         if(filme.getFaixaEtaria().equals("10")){faixa.setBackgroundResource(R.drawable.dez);}
