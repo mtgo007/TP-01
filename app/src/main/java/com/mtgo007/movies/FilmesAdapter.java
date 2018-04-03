@@ -92,13 +92,13 @@ public class FilmesAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        Filme filme = this.filmes.get(position);
+        final Filme filme = this.filmes.get(position);
         final View newView = LayoutInflater.from(this.context).inflate(R.layout.filme_layout, parent, false);
 
         final TextView titulo = newView.findViewById(R.id.Filme_titulo);
-        TextView Genero = newView.findViewById(R.id.Filme_genero);
-        TextView diretor = newView.findViewById(R.id.Filme_Diretor);
-        TextView ano = newView.findViewById(R.id.Filme_Ano);
+        final TextView Genero = newView.findViewById(R.id.Filme_genero);
+        final TextView diretor = newView.findViewById(R.id.Filme_Diretor);
+        final TextView ano = newView.findViewById(R.id.Filme_Ano);
         ImageView faixa = newView.findViewById(R.id.Filme_Faixa);
 
 
@@ -106,6 +106,7 @@ public class FilmesAdapter extends BaseAdapter {
         Genero.setText(filme.getGenero());
         diretor.setText(filme.getDiretor());
         ano.setText(String.valueOf(filme.getAno()));
+
 
         if(filme.getFaixaEtaria().equals("L")){faixa.setBackgroundResource(R.drawable.livre);}
         if(filme.getFaixaEtaria().equals("10")){faixa.setBackgroundResource(R.drawable.dez);}
@@ -158,7 +159,7 @@ public class FilmesAdapter extends BaseAdapter {
                         } else if(selecionado.equals("Compartilhar")){
                             Intent sendIntent = new Intent();
                             sendIntent.setAction(Intent.ACTION_SEND);
-                            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                            sendIntent.putExtra(Intent.EXTRA_TEXT, "Titulo: "+titulo.getText().toString()+"\nDiretor: "+diretor.getText().toString()+"\nGenêro: "+Genero.getText().toString()+"\nFaixa Étaria: "+filme.getFaixaEtaria().toString()+"\nAno: "+ano.getText().toString());
                             sendIntent.setType("text/plain");
                             FilmesAdapter.this.context.startActivity(Intent.createChooser(sendIntent, "Send To"));
                         }
