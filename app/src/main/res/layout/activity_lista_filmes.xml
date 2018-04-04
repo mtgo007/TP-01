@@ -18,7 +18,9 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:src="@drawable/add"
-        android:backgroundTint="@color/colorPrimary"/>
+        android:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        />
 
 
 </FrameLayout>
