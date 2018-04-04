@@ -35,6 +35,18 @@ public class ListaFilmes extends AppCompatActivity {
 
         final FilmesAdapter fadaper = new FilmesAdapter(this, movies, name);
 
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle args = new Bundle();
+                args.putCharSequence("User", name);
+                Intent intent = new Intent(ListaFilmes.this, AddFilme.class);
+                intent.putExtras(args);
+                startActivity(intent);
+            }
+        });
+
         mDatabase.child("users").child(name).child("Filmes").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

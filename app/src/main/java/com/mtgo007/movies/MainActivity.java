@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                                         //start Movies Intent
                                         Bundle args = new Bundle();
                                         args.putCharSequence("User",user.getUsername());
-                                        Intent intent = new Intent(MainActivity.this, UserHub.class);
+                                        Intent intent = new Intent(MainActivity.this, ListaFilmes.class);
                                         intent.putExtras(args);
                                         startActivity(intent);
                                     } else {

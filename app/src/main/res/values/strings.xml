@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Movies</string>
     <string name="title_activity_lista_de_filmes">ListaDeFilmes</string>
+    <string-array name="faixaEtaria">
+        <item>L</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+    </string-array>
 </resources>

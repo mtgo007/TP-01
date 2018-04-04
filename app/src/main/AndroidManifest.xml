@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".AddFilme" />
         <activity android:name=".ListaFilmes" />
-        <activity android:name=".UserHub" />
         <activity android:name=".Cadastar"></activity>
     </application>
 
