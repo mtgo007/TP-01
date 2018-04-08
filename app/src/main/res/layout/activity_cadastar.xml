@@ -1,77 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mtgo007.movies.Cadastar">
+    tools:context="com.mtgo007.movies.Cadastar"
+    android:background="#000000"
+    >
 
-    <TableRow
-        android:gravity="center"
-        android:layout_marginTop="15dp">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Username" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/Logo"
+        android:src="@drawable/logo"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        />
 
-        <EditText
+
+    <ImageView
+        android:id="@+id/Cadastrar-Backgroud"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+
+        >
+
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Username"
+            android:background="@drawable/rounded_white"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@drawable/ic_user_icon"
+            android:textSize="14sp"
+            android:drawablePadding="5dp"
+            android:paddingStart="10dp"
+            android:layout_marginBottom="10dp"
             android:id="@+id/Username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Username" />
-
-    </TableRow>
-    <TableRow
-        android:gravity="center"
-        android:layout_marginTop="2dp">
-
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Senha" />
-
-        <EditText
+            />
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Senha"
+            android:background="@drawable/rounded_white"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@drawable/ic_pass_icon"
+            android:textSize="14sp"
+            android:drawablePadding="5dp"
+            android:paddingStart="10dp"
+            android:inputType="textPassword"
             android:id="@+id/Senha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Senha" />
-    </TableRow>
+            android:layout_marginBottom="10dp"
 
-    <TableRow
-        android:gravity="center"
-        android:layout_marginTop="2dp">
-
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirme Sua Senha" />
-
-        <EditText
+            />
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Confirme Sua Senha"
+            android:background="@drawable/rounded_white"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@drawable/ic_confirm_icon"
+            android:textSize="14sp"
+            android:drawablePadding="5dp"
+            android:paddingStart="10dp"
+            android:inputType="textPassword"
             android:id="@+id/ConfirmaSenha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Confirme Sua Senha" />
-    </TableRow>
-    <TableRow
-        android:gravity="center"
-        android:layout_marginTop="10dp">
+            android:layout_marginBottom="10dp"
+
+            />
 
         <Button
             android:id="@+id/cad"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cadastrar" />
-    </TableRow>
-</TableLayout>
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="36dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/register_button"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Cadastrar"
+            android:textColor="#FFFFFF"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+</RelativeLayout>
