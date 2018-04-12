@@ -13,12 +13,12 @@
 
     <TextView
         android:id="@+id/Filme_titulo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/Filme_Faixa"
         android:text="Titulo"
-        android:textSize="30dp"/>
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/Filme_genero"
@@ -47,5 +47,13 @@
         android:layout_toEndOf="@+id/Filme_Faixa"
         android:text="Ano"
         android:textSize="15dp" />
+
+    <ImageView
+        android:id="@+id/options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/options" />
 
 </RelativeLayout>

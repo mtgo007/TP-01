@@ -69,6 +69,7 @@ public class FilmesAdapter extends BaseAdapter {
         final TextView Genero = newView.findViewById(R.id.Filme_genero);
         final TextView diretor = newView.findViewById(R.id.Filme_Diretor);
         final TextView ano = newView.findViewById(R.id.Filme_Ano);
+        final ImageView options = newView.findViewById(R.id.options);
 
         final ImageView faixa = newView.findViewById(R.id.Filme_Faixa);
 
@@ -87,10 +88,10 @@ public class FilmesAdapter extends BaseAdapter {
         if(filme.getFaixaEtaria().equals("16")){faixa.setBackgroundResource(R.drawable.dezeseis);}
         if(filme.getFaixaEtaria().equals("18")){faixa.setBackgroundResource(R.drawable.dezoito);}
 
-        newView.setOnLongClickListener(new View.OnLongClickListener() {
+        options.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                PopupMenu popup = new PopupMenu(FilmesAdapter.this.context, newView, Gravity.RIGHT);
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(FilmesAdapter.this.context, options);
                 MenuInflater inflater = popup.getMenuInflater();
                 inflater.inflate(R.menu.popup_menu, popup.getMenu());
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -141,7 +142,7 @@ public class FilmesAdapter extends BaseAdapter {
                 });
                 popup.show();
 
-                return false;
+
             }
         });
 

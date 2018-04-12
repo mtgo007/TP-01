@@ -45,6 +45,7 @@ public class AddFilme extends AppCompatActivity {
         final EditText diretor = findViewById(R.id.diretor);
         final EditText ano = findViewById(R.id.ano);
 
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

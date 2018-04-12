@@ -9,4 +9,5 @@
         <item>16</item>
         <item>18</item>
     </string-array>
+    <string name="Senha">Senha</string>
 </resources>
