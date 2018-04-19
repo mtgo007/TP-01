@@ -134,7 +134,7 @@ public class FilmesAdapter extends BaseAdapter {
                             sendIntent.setAction(Intent.ACTION_SEND);
                             sendIntent.putExtra(Intent.EXTRA_TEXT, "Titulo: "+titulo.getText().toString()+"\nDiretor: "+diretor.getText().toString()+"\nGenêro: "+Genero.getText().toString()+"\nFaixa Étaria: "+filme.getFaixaEtaria().toString()+"\nAno: "+ano.getText().toString());
                             sendIntent.setType("text/plain");
-                            FilmesAdapter.this.context.startActivity(Intent.createChooser(sendIntent, "Send To"));
+                            FilmesAdapter.this.context.startActivity(Intent.createChooser(sendIntent, "Compartilhar"));
                         }
                         //Toast.makeText(FilmesAdapter.this.context,"You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show();
                         return true;

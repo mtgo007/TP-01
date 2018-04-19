@@ -54,7 +54,7 @@ public class AddFilme extends AppCompatActivity {
                 Filme filme = new Filme(nome.getText().toString(), genero.getText().toString(), diretor.getText().toString(), faixa ,Integer.parseInt(ano.getText().toString()));
                 mDatabase.child("users").child(name).child("Filmes").child(filme.getNome()).setValue(filme);
                 Toast.makeText(AddFilme.this, "Filme Adicionado com sucesso", Toast.LENGTH_SHORT);
-                Log.i("AddFilme","Adicionado");
+                Toast.makeText(AddFilme.this,"Filme Adicionado com Sucesso", Toast.LENGTH_LONG).show();
                 AddFilme.this.finish();
             }
         });

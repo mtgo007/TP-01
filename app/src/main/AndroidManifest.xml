@@ -18,9 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddFilme" />
-        <activity android:name=".ListaFilmes" />
-        <activity android:name=".Cadastar"></activity>
+        <activity android:name=".AddFilme" android:parentActivityName=".ListaFilmes"/>
+        <activity android:name=".ListaFilmes" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Cadastar" android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
