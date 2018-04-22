@@ -1,5 +1,6 @@
 package com.mtgo007.movies;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,10 +19,19 @@ public class AddFilme extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
 
+    //fontes
+//    TextView titulo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_filme);
+        //Dados fonte
+//
+//        titulo = (TextView)findViewById(R.id.adicionar_titulo);
+//        Typeface myCustomFont=Typeface.createFromAsset(getAssets(),"fonts/cantate_beveled.ttf");
+//        titulo.setTypeface(myCustomFont);
+
         //Dados do Bundle
         Bundle args = this.getIntent().getExtras();
         final String name = args.getString("User");
