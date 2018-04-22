@@ -84,21 +84,21 @@
         android:id="@+id/nome"
 
         />
-    <AutoCompleteTextView
+    <Spinner
+        android:id="@+id/genero"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:hint="Genero :"
-        android:background="@drawable/rounded_white"
-        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginEnd="15dp"
-        android:textSize="14sp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/rounded_white"
         android:drawablePadding="5dp"
         android:paddingStart="10dp"
-        android:inputType="textPassword"
-        android:id="@+id/genero"
-        android:layout_marginBottom="10dp"
+        android:textSize="14sp"
+        android:spinnerMode="dialog"
 
         />
+
     <AutoCompleteTextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -109,7 +109,7 @@
         android:textSize="14sp"
         android:drawablePadding="5dp"
         android:paddingStart="10dp"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:id="@+id/diretor"
         android:layout_marginBottom="10dp"
 
@@ -156,7 +156,7 @@
         android:textSize="14sp"
         android:drawablePadding="5dp"
         android:paddingStart="10dp"
-        android:inputType="textPassword"
+        android:inputType="number"
         android:id="@+id/ano"
         android:layout_marginBottom="10dp"
 

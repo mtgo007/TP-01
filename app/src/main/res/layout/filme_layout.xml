@@ -48,12 +48,5 @@
         android:text="Ano"
         android:textSize="15dp" />
 
-    <ImageView
-        android:id="@+id/options"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/options" />
 
 </RelativeLayout>

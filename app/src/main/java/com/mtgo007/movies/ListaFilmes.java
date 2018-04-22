@@ -1,5 +1,6 @@
 package com.mtgo007.movies;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -20,18 +21,27 @@ public class ListaFilmes extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     private ArrayList<Filme> movies;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_filmes);
 
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         movies = new ArrayList();
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+
+
         Bundle args = this.getIntent().getExtras();
-        final String name = args.getString("User");
+        if(args != null){
+            name = args.getString("User");
+        }
+
 
         final FilmesAdapter fadaper = new FilmesAdapter(this, movies, name);
 

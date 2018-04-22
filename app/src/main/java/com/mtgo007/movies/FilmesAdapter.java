@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -69,7 +70,7 @@ public class FilmesAdapter extends BaseAdapter {
         final TextView Genero = newView.findViewById(R.id.Filme_genero);
         final TextView diretor = newView.findViewById(R.id.Filme_Diretor);
         final TextView ano = newView.findViewById(R.id.Filme_Ano);
-        final ImageView options = newView.findViewById(R.id.options);
+
 
         final ImageView faixa = newView.findViewById(R.id.Filme_Faixa);
 
@@ -88,61 +89,15 @@ public class FilmesAdapter extends BaseAdapter {
         if(filme.getFaixaEtaria().equals("16")){faixa.setBackgroundResource(R.drawable.dezeseis);}
         if(filme.getFaixaEtaria().equals("18")){faixa.setBackgroundResource(R.drawable.dezoito);}
 
-        options.setOnClickListener(new View.OnClickListener() {
+        newView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(FilmesAdapter.this.context, options);
-                MenuInflater inflater = popup.getMenuInflater();
-                inflater.inflate(R.menu.popup_menu, popup.getMenu());
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
-                        String selecionado = String.valueOf(item.getTitle());
-                        if(selecionado.equals("Deletar")){
-                            Log.i("Filme Adapter","Deletar");
-                            //Comfirmação
-
-                            AlertDialog.Builder alertBuilder = new AlertDialog.Builder(FilmesAdapter.this.context);
-
-                            // Define Parâmetros para o Dialog
-                            alertBuilder.setTitle("Deseja Deletar o Filme "+titulo.getText().toString());
-                            alertBuilder.setMessage("O Filme Será Deletado de Sua Lista");
-
-                            // Define o que acontece quando o usuário seleciona a opção positiva
-                            alertBuilder.setPositiveButton("Deletar", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    mDatabase = FirebaseDatabase.getInstance().getReference();
-                                    mDatabase.child("users").child(FilmesAdapter.this.user).child("Filmes").child(titulo.getText().toString()).removeValue();
-                                    FilmesAdapter.this.filmes.remove(position);
-                                    Toast.makeText(FilmesAdapter.this.context, "Filme Deletado", Toast.LENGTH_LONG).show();
-                                    FilmesAdapter.this.notifyDataSetChanged();
-                                }
-                            });
-
-                            // Define o que acontece quando o usuário seleciona a opção negativa
-                            alertBuilder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    Toast.makeText(FilmesAdapter.this.context, "Filme Não Deletado", Toast.LENGTH_LONG).show();
-                                }
-                            });
-
-                            AlertDialog dialog = alertBuilder.create();
-                            dialog.show();
-                        } else if(selecionado.equals("Compartilhar")){
-                            Intent sendIntent = new Intent();
-                            sendIntent.setAction(Intent.ACTION_SEND);
-                            sendIntent.putExtra(Intent.EXTRA_TEXT, "Titulo: "+titulo.getText().toString()+"\nDiretor: "+diretor.getText().toString()+"\nGenêro: "+Genero.getText().toString()+"\nFaixa Étaria: "+filme.getFaixaEtaria().toString()+"\nAno: "+ano.getText().toString());
-                            sendIntent.setType("text/plain");
-                            FilmesAdapter.this.context.startActivity(Intent.createChooser(sendIntent, "Compartilhar"));
-                        }
-                        //Toast.makeText(FilmesAdapter.this.context,"You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show();
-                        return true;
-                    }
-                });
-                popup.show();
-
-
+                Bundle args = new Bundle();
+                args.putCharSequence("User",user);
+                args.putCharSequence("Filme",filme.getNome());
+                Intent intent = new Intent(context, details.class);
+                intent.putExtras(args);
+                context.startActivity(intent);
             }
         });
 
