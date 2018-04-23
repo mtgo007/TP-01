@@ -28,9 +28,6 @@ public class AddFilme extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_filme);
 
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         //Dados do Bundle
         Bundle args = this.getIntent().getExtras();
         final String name = args.getString("User");

@@ -27,9 +27,6 @@ public class details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         final TextView titulo = findViewById(R.id.detalhe_titulo);
         final TextView diretor = findViewById(R.id.detalhe_diretor);
         final TextView genero = findViewById(R.id.detalhe_genero);

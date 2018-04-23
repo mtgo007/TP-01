@@ -20,9 +20,6 @@ public class Cadastar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastar);
 
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         Button btn = findViewById(R.id.cad);
         final EditText user = findViewById(R.id.Username);
         final EditText senha = findViewById(R.id.Senha);
