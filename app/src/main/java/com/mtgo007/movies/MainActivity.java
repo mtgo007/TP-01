@@ -50,43 +50,48 @@ public class MainActivity extends AppCompatActivity {
                 user.setUsername(usuario.getText().toString());
                 user.setSenha(senha.getText().toString());
 
-                //mDatabase.child("users").child(user.getUsername()).setValue(user);
-
-                mDatabase.child("users").child(user.getUsername()).child("senha").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        try {
-                            if (snapshot.getValue() != null) {
-                                try {
-                                    Log.e("TAG", "senha" + snapshot.getValue());
-                                    if(user.getSenha().equals(snapshot.getValue().toString())){
-                                        // your name values you will get here
-                                        Toast.makeText(MainActivity.this, getString(R.string.bemvindo), Toast.LENGTH_SHORT).show();
-                                        //start Movies Intent
-                                        Bundle args = new Bundle();
-                                        args.putCharSequence("User",user.getUsername());
-                                        Intent intent = new Intent(MainActivity.this, ListaFilmes.class);
-                                        intent.putExtras(args);
-                                        startActivity(intent);
-                                    } else {
-                                        Toast.makeText(MainActivity.this, getString(R.string.senha_invalida), Toast.LENGTH_SHORT).show();
+                if(!usuario.getText().toString().equals("")){
+                    mDatabase.child("users").child(user.getUsername()).child("senha").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot snapshot) {
+                            try {
+                                if (snapshot.getValue() != null) {
+                                    try {
+                                        Log.e("TAG", "senha" + snapshot.getValue());
+                                        if(user.getSenha().equals(snapshot.getValue().toString())){
+                                            // your name values you will get here
+                                            Toast.makeText(MainActivity.this, getString(R.string.bemvindo), Toast.LENGTH_SHORT).show();
+                                            //start Movies Intent
+                                            Bundle args = new Bundle();
+                                            args.putCharSequence("User",user.getUsername());
+                                            Intent intent = new Intent(MainActivity.this, ListaFilmes.class);
+                                            intent.putExtras(args);
+                                            startActivity(intent);
+                                        } else {
+                                            Toast.makeText(MainActivity.this, getString(R.string.senha_invalida), Toast.LENGTH_SHORT).show();
+                                        }
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
                                     }
-                                } catch (Exception e) {
-                                    e.printStackTrace();
+                                } else {
+                                    Toast.makeText(MainActivity.this, getString(R.string.usuario_invalido), Toast.LENGTH_SHORT).show();
                                 }
-                            } else {
-                                Toast.makeText(MainActivity.this, getString(R.string.usuario_invalido), Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                e.printStackTrace();
                             }
-                        } catch (Exception e) {
-                            e.printStackTrace();
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError firebaseError) {
-                        Log.e("onCancelled", " cancelled");
-                    }
-                });
+                        @Override
+                        public void onCancelled(DatabaseError firebaseError) {
+                            Log.e("onCancelled", " cancelled");
+                        }
+                    });
+                }
+                else{
+                    Toast.makeText(MainActivity.this, getString(R.string.campos_nulos),Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
     }

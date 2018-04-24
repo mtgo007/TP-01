@@ -26,6 +26,7 @@
     <string name="Senha">Password</string>
     <string name="bemvindo">Welcome</string>
     <string name="add">Add Movie</string>
+    <string name="add_movie">Add Movie</string>
     <string-array name="faixaEtaria">
         <item>L</item>
         <item>10</item>

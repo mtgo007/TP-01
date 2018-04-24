@@ -27,6 +27,7 @@
     <string name="cancelar">Cancelar</string>
     <string name="bemvindo">Bem Vindo</string>
     <string name="add">Adicionar</string>
+    <string name="add_movie">Adicionar Filme</string>
     <string-array name="faixaEtaria">
         <item>L</item>
         <item>10</item>
