@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TP-01.iml" filepath="$PROJECT_DIR$/TP-01.iml" />
       <module fileurl="file://C:\Users\mtgo0\Desktop\movies_android\TP-01.iml" filepath="C:\Users\mtgo0\Desktop\movies_android\TP-01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TP-01.iml" filepath="$PROJECT_DIR$/TP-01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/movies_android.iml" filepath="$PROJECT_DIR$/movies_android.iml" />
     </modules>
