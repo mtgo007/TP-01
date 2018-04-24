@@ -9,15 +9,29 @@
     >
 
 
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/Logo"
-        android:src="@drawable/cadastrarlogo"
         android:scaleType="fitCenter"
         android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="120dp"
+        android:text="Cadastro"
+        android:textColor="#fff"
+        android:textSize="45sp"
+        android:layout_marginTop="50dp"
+
         />
+
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:id="@+id/Logo"-->
+        <!--android:src="@drawable/cadastrarlogo"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:layout_marginBottom="30dp"-->
+        <!--android:layout_marginLeft="30dp"-->
+        <!--/>-->
 
 
     <ImageView
@@ -44,7 +58,7 @@
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:hint="Usuário :"
+            android:hint="Usuário "
             android:background="@drawable/rounded_white"
             android:layout_marginTop="200dp"
             android:layout_marginStart="15dp"
@@ -58,7 +72,7 @@
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:hint="Senha :"
+            android:hint="Senha "
             android:background="@drawable/rounded_white"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
@@ -73,7 +87,7 @@
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:hint="Confirmar Senha :"
+            android:hint="Confirmar Senha "
             android:background="@drawable/rounded_white"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"

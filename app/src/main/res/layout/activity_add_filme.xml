@@ -8,33 +8,20 @@
     android:background="#000">
 
 
-    <!--</TableRow>-->
-    <!--<TableRow android:gravity="center"-->
-        <!--android:layout_marginTop="5dp">-->
-        <!--<TextView-->
-            <!--android:id="@+id/textView6"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Faixa Etária"-->
-            <!--/>-->
 
-        <!--<Spinner-->
-            <!--android:id="@+id/faixaEtaria"-->
-            <!--android:layout_width="fill_parent"-->
-            <!--android:layout_height="wrap_content" />-->
+    <TextView
+        android:id="@+id/adicionar_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="35dp"
+        android:text="Adicionar Filme"
+        android:textColor="#fff"
+        android:textSize="45sp"
+        android:layout_marginTop="70dp"
 
-    <!--<TextView-->
-        <!--android:id="@+id/adicionar_titulo"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:scaleType="fitCenter"-->
-        <!--android:layout_marginBottom="30dp"-->
-        <!--android:layout_marginLeft="35dp"-->
-        <!--android:text="Adicionar Filme"-->
-        <!--android:textColor="#000"-->
-        <!--android:textSize="45sp"-->
-        <!--android:layout_marginTop="50dp"-->
-        <!--/>-->
+        />
 
 
     <ImageView

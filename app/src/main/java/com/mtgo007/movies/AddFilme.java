@@ -28,6 +28,12 @@ public class AddFilme extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_filme);
 
+        //Dados fonte
+
+//        titulo = (TextView)findViewById(R.id.adicionar_titulo);
+//        Typeface myCustomFont=Typeface.createFromAsset(getAssets(),"fonts/pacifico.ttf.ttf");
+//        titulo.setTypeface(myCustomFont);
+
         //Dados do Bundle
         Bundle args = this.getIntent().getExtras();
         final String name = args.getString("User");
