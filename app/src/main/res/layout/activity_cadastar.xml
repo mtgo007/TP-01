@@ -9,15 +9,17 @@
     >
 
 
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/Logo"
-        android:src="@drawable/cadastrarlogo"
         android:scaleType="fitCenter"
         android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
-        />
+        android:layout_marginLeft="120dp"
+        android:text="Cadastro"
+        android:textColor="#fff"
+        android:textSize="45sp"
+        android:layout_marginTop="50dp"/>
+
 
 
     <ImageView
