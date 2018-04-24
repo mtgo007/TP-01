@@ -67,7 +67,7 @@ public class AddFilme extends AppCompatActivity {
                 String genero = genero_spinner.getSelectedItem().toString();
                 Filme filme = new Filme(nome.getText().toString(), genero, diretor.getText().toString(), censura ,Integer.parseInt(ano.getText().toString()));
                 mDatabase.child("users").child(name).child("Filmes").child(filme.getNome()).setValue(filme);
-                Toast.makeText(AddFilme.this,"Filme Adicionado com Sucesso", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddFilme.this,R.string.Filme_sucesso, Toast.LENGTH_LONG).show();
                 AddFilme.this.finish();
             }
         });

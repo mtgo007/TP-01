@@ -1,6 +1,32 @@
 <resources>
     <string name="app_name">Movies</string>
-    <string name="title_activity_lista_de_filmes">ListaDeFilmes</string>
+    <string name="title_activity_lista_de_filmes">Lista De Filmes</string>
+    <string name="username">Nome de Usuário</string>
+    <string name="login">Entrar</string>
+    <string name="singup">Cadastrar</string>
+    <string name="user">Usuário</string>
+    <string name="confirmaSenha">Confirme Sua Senha</string>
+    <string name="filme_titulo">Título</string>
+    <string name="filme_diretor">Diretor</string>
+    <string name="filme_ano">Ano de Lançamento</string>
+    <string name="usuario_invalido">Usuário Invalido</string>
+    <string name="senha_invalida">Senha Invalida</string>
+    <string name="campos_nulos">Campos Nulos</string>
+    <string name="Senhas_diferentes">As Senhas são diferentes</string>
+    <string name="cadastro_sucesso">Usuário Adicionado com Sucesso</string>
+    <string name="Filme_sucesso">Filme Adicionado com Sucesso</string>
+    <string name="filme_delete">Filme Deletado</string>
+    <string name="filme_delete_fail">Filme Não Deletado</string>
+    <string name="Confima_del_filme">Deseja Deletar o Filme</string>
+    <string name="deletion_filme_mensagem">O Filme Será deletado de sua Lista</string>
+    <string name="filme_Faixa">Faixa Etária</string>
+    <string name="filme_genero">Gênero</string>
+    <string name="compartilhar">Compartilhar Filme</string>
+    <string name="Senha">Senha</string>
+    <string name="delete">Deletar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="bemvindo">Bem Vindo</string>
+    <string name="add">Adicionar</string>
     <string-array name="faixaEtaria">
         <item>L</item>
         <item>10</item>
@@ -17,5 +43,4 @@
         <item>Aventura</item>
         <item>Terror</item>
     </string-array>
-    <string name="Senha">Senha</string>
 </resources>

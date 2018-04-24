@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                                     Log.e("TAG", "senha" + snapshot.getValue());
                                     if(user.getSenha().equals(snapshot.getValue().toString())){
                                         // your name values you will get here
-                                        Toast.makeText(MainActivity.this, "Bem Vindo", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, getString(R.string.bemvindo), Toast.LENGTH_SHORT).show();
                                         //start Movies Intent
                                         Bundle args = new Bundle();
                                         args.putCharSequence("User",user.getUsername());
@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
                                         intent.putExtras(args);
                                         startActivity(intent);
                                     } else {
-                                        Toast.makeText(MainActivity.this, "Senha Invalido", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, getString(R.string.senha_invalida), Toast.LENGTH_SHORT).show();
                                     }
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
                             } else {
-                                Toast.makeText(MainActivity.this, "Usuario Invalido", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, getString(R.string.usuario_invalido), Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
                             e.printStackTrace();

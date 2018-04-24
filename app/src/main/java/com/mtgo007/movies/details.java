@@ -62,9 +62,9 @@ public class details extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, "Titulo: "+titulo.getText().toString()+"\nDiretor: "+diretor.getText().toString()+"\nGenêro: "+genero.getText().toString()+"\nFaixa Étaria: "+movie.getFaixaEtaria()+"\nAno: "+ano.getText().toString());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.filme_titulo)+" : "+titulo.getText().toString()+"\n"+getString(R.string.filme_diretor)+" : "+diretor.getText().toString()+"\n"+getString(R.string.filme_genero)+" : "+genero.getText().toString()+"\n"+getString(R.string.filme_Faixa)+" : "+movie.getFaixaEtaria()+"\n"+getString(R.string.filme_ano)+" : "+ano.getText().toString());
                         sendIntent.setType("text/plain");
-                        details.this.startActivity(Intent.createChooser(sendIntent, "Compartilhar"));
+                        details.this.startActivity(Intent.createChooser(sendIntent, getString(R.string.compartilhar)));
                     }
                 });
             }
@@ -82,25 +82,25 @@ public class details extends AppCompatActivity {
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(details.this);
 
                 // Define Parâmetros para o Dialog
-                alertBuilder.setTitle("Deseja Deletar o Filme "+filme);
-                alertBuilder.setMessage("O Filme Será Deletado de Sua Lista");
+                alertBuilder.setTitle(getString(R.string.Confima_del_filme)+" "+filme+"?");
+                alertBuilder.setMessage(getString(R.string.deletion_filme_mensagem));
 
                 // Define o que acontece quando o usuário seleciona a opção positiva
-                alertBuilder.setPositiveButton("Deletar", new DialogInterface.OnClickListener() {
+                alertBuilder.setPositiveButton(getString(R.string.delete), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         mDatabase = FirebaseDatabase.getInstance().getReference();
                         mDatabase.child("users").child(name).child("Filmes").child(filme).removeValue();
-                        Toast.makeText(details.this, "Filme Deletado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(details.this, R.string.filme_delete, Toast.LENGTH_LONG).show();
                         details.this.finish();
                     }
                 });
 
                 // Define o que acontece quando o usuário seleciona a opção negativa
-                alertBuilder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                alertBuilder.setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(details.this, "Filme Não Deletado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(details.this, getString(R.string.filme_delete_fail), Toast.LENGTH_LONG).show();
                     }
                 });
 

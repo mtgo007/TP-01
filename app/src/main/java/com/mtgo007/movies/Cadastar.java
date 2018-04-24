@@ -31,19 +31,19 @@ public class Cadastar extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(user.getText().toString()!=null&&senha.getText().toString()!=null&&cSenha.getText().toString()!=null){
+                if(!user.getText().toString().equals("")&&!senha.getText().toString().equals("")&&!cSenha.getText().toString().equals("")){
                     if(senha.getText().toString().equals(cSenha.getText().toString())){
                         Usuario newUser = new Usuario();
                         newUser.setUsername(user.getText().toString());
                         newUser.setSenha(senha.getText().toString());
                         mDatabase.child("users").child(user.getText().toString()).setValue(newUser);
-                        Toast.makeText(Cadastar.this, "Usuario Adicionado Com Sucesso", Toast.LENGTH_SHORT);
+                        Toast.makeText(Cadastar.this, R.string.cadastro_sucesso, Toast.LENGTH_SHORT).show();
                         Cadastar.this.finish();
                     }else{
-                        Toast.makeText(Cadastar.this,"Senhas não Compativeis", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Cadastar.this,R.string.Senhas_diferentes, Toast.LENGTH_SHORT).show();
                     }
                 } else{
-                    Toast.makeText(Cadastar.this, "Campos Nulos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Cadastar.this, R.string.campos_nulos, Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="title_activity_lista_de_filmes">Movies List</string>
+    <string name="username">Username</string>
+    <string name="login">Sing In</string>
+    <string name="singup">Sing Up</string>
+    <string name="user">User</string>
+    <string name="confirmaSenha">Confirm your Password</string>
+    <string name="filme_titulo">Title</string>
+    <string name="filme_diretor">Director</string>
+    <string name="filme_ano">Release Year</string>
+    <string name="usuario_invalido">Invalid User</string>
+    <string name="senha_invalida">Invalid Password</string>
+    <string name="campos_nulos">Null fields</string>
+    <string name="Senhas_diferentes">Missmatching Passwords</string>
+    <string name="cadastro_sucesso">Successfully Added User</string>
+    <string name="Filme_sucesso">Successfully Added Movie</string>
+    <string name="filme_delete">Movie Deleted</string>
+    <string name="filme_delete_fail">Movie Deletion Aborted</string>
+    <string name="Confima_del_filme">Do you want to delete the movie</string>
+    <string name="deletion_filme_mensagem">The movie will be deleted from your movie\'s list</string>
+    <string name="filme_Faixa">Age Range</string>
+    <string name="filme_genero">Genre</string>
+    <string name="compartilhar">Share</string>
+    <string name="Senha">Password</string>
+    <string name="bemvindo">Welcome</string>
+    <string name="add">Add Movie</string>
+    <string-array name="faixaEtaria">
+        <item>L</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+    </string-array>
+    <string-array name="generos">
+        <item>Action</item>
+        <item>Comedy</item>
+        <item>Drama</item>
+        <item>Science fiction</item>
+        <item>Adventure</item>
+        <item>Horror</item>
+    </string-array>
+    <string name="delete">Delete</string>
+    <string name="cancelar">Cancel</string>
+
+</resources>
